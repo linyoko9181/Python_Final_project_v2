@@ -13,7 +13,7 @@ def restaurant():
         name = request.form['name']
         df = get_Google_Reviews(name)
         positive_reviews, negative_reviews, rating = sentiment_analyzer(df)
-        positive_labels, negative_labels = data_extractor(positive_reviews,negative_reviews)
+        positive_labels, negative_labels = data_extractor(positive_reviews,negative_reviews,name)
 
         session['positive_labels'] = positive_labels
         session['negative_labels'] = negative_labels
