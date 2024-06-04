@@ -54,7 +54,7 @@ def show_positive_review():
         displayed_text = text_selector(1, label)
     else:
         # Default to displaying text for the first positive label
-        displayed_text = text_selector(1, positive_labels[1][0])
+        displayed_text = text_selector(1, positive_labels[0][0])
     # Render the positive reviews template
     return render_template('positive.html', labels=positive_labels, displayed_text=displayed_text, rating=rating)
 
@@ -71,7 +71,7 @@ def show_negative_review():
         displayed_text = text_selector(2, label)
     else:
         # Default to displaying text for the first negative label
-        displayed_text = text_selector(2, negative_labels[1][0])
+        displayed_text = text_selector(2, negative_labels[0][0])
     # Render the negative reviews template
     return render_template('negative.html', labels=negative_labels, displayed_text=displayed_text, rating=rating)
 
